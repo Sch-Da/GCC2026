@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <title>NLP in Galaxy - GCC2026 Poster (Updated)</title>
 <style>
-  @page { size: 48in 36in; margin: 0; }
+  @page { size: A0; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    width: 48in; height: 36in;
+    width: 33.1in; height: 46.8in;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background: #f0f0ec;
     color: #2c2c2c;
@@ -302,6 +302,24 @@
     padding: 0.1in 0.2in;
     border-radius: 0.1in;
   }
+
+  /* ── Print optimization ── */
+  @media print {
+    @page {
+      size: A0;
+      margin: 0;
+    }
+    body {
+      width: 33.1in !important;
+      height: 46.8in !important;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -333,7 +351,7 @@
     <div class="card">
       <h2>Motivation</h2>
       <p>Galaxy's domain-agnostic platform extends well beyond bioinformatics. The <span class="highlight-text">Digital Humanities and Social Sciences SIG</span> connects researchers who need computational tools for analyzing large text corpora but often lack programming expertise.</p>
-      <p>We integrated <span class="highlight-text">six comprehensive NLP tools</span> into Galaxy, enabling researchers to perform sophisticated text analysis <span class="highlight-text">without writing a single line of code</span>.</p>
+      <p>We integrated <span class="highlight-text">six comprehensive NLP tools</span> into Galaxy, enabling researchers to perform sophisticated text analysis <span class="highlight-text">without writing a single line of code</span>. All tools are now <span class="highlight-text">submitted to the Galaxy Tools IUC</span> for community integration.</p>
     </div>
 
     <div class="card">
@@ -496,7 +514,7 @@
 
     <div class="card">
       <h2>Availability</h2>
-      <p>All tools and data managers are available on the <strong>Galaxy Toolshed</strong> under owner <strong>ksuderman</strong>:</p>
+      <p>All tools and data managers are available on the <strong>Galaxy Toolshed</strong> under owner <strong>ksuderman</strong> and <span class="highlight-text">submitted to Galaxy Tools IUC</span> for community integration:</p>
 
       <p><strong>NLP Tools:</strong></p>
       <ul>
@@ -530,7 +548,7 @@
   </div>
 
   <div class="card" style="grid-column: 3 / 4;">
-    <h2>Future Directions</h2>
+    <h2>Impact &amp; Future</h2>
     <ul>
       <li>Expand the analysis tool collection with network visualization and topic modeling</li>
       <li>Build reusable Galaxy workflows for common DH research patterns</li>
