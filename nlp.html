@@ -2,81 +2,90 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NLP in Galaxy - GCC2026</title>
+<title>NLP in Galaxy - GCC2026 Poster (Updated)</title>
 <style>
+  @page { size: A0; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    min-height: 100vh;
+    width: 33.1in; height: 46.8in;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background: #f0f0ec;
     color: #2c2c2c;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    padding: 1.5vw;
-    gap: 1.2vw;
+    padding: 0.4in;
+    gap: 0.3in;
   }
+
+  /* ── Galaxy brand colors ── */
+  /* Dark gray:  #4a4a4a  (logo text)       */
+  /* Gold:       #c9b613  (logo accent)     */
+  /* Warm gray:  #6b6b6b  (secondary text)  */
+  /* Header bg:  #2c2c2c  (near-black)      */
 
   /* ── Header ── */
   .header {
     background: #2c2c2c;
     color: white;
-    padding: 1.5vw 2vw;
-    border-radius: 8px;
+    padding: 0.4in 0.6in;
+    border-radius: 0.15in;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 2vw;
-    border-bottom: 4px solid #c9b613;
+    gap: 0.5in;
+    border-bottom: 8px solid #c9b613;
   }
   .header .logo-left img {
-    height: 4vw;
-    min-height: 50px;
+    height: 1.5in;
     object-fit: contain;
   }
   .header .title-area {
     text-align: center;
   }
   .header h1 {
-    font-size: clamp(20pt, 3.5vw, 66pt);
+    font-size: 66pt;
     font-weight: 700;
     line-height: 1.15;
-    margin-bottom: 0.3vw;
+    margin-bottom: 0.1in;
   }
   .header .subtitle {
-    font-size: clamp(12pt, 1.6vw, 30pt);
+    font-size: 30pt;
     font-weight: 300;
     opacity: 0.85;
   }
   .header .authors {
-    font-size: clamp(10pt, 1.4vw, 26pt);
-    margin-top: 0.8vw;
+    font-size: 26pt;
+    margin-top: 0.2in;
     font-weight: 500;
   }
   .header .emails {
-    font-size: clamp(8pt, 1.1vw, 20pt);
+    font-size: 20pt;
     opacity: 0.7;
-    margin-top: 0.2vw;
+    margin-top: 0.06in;
   }
   .header .affiliations {
-    font-size: clamp(9pt, 1.2vw, 22pt);
+    font-size: 22pt;
     opacity: 0.7;
-    margin-top: 0.2vw;
+    margin-top: 0.06in;
   }
   .header .logo-right {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5vw;
+    gap: 0.25in;
+  }
+  .header .logo-right img {
+    height: 1.5in;
+    object-fit: contain;
   }
   .header .logo-right .conf {
-    font-size: clamp(14pt, 1.8vw, 32pt);
+    font-size: 32pt;
     font-weight: 700;
     color: #c9b613;
     text-align: center;
   }
   .header .logo-right .conf-sub {
-    font-size: clamp(9pt, 1vw, 18pt);
+    font-size: 18pt;
     opacity: 0.7;
     text-align: center;
   }
@@ -85,34 +94,35 @@
   .content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.2vw;
+    gap: 0.3in;
+    grid-auto-rows: min-content;
   }
 
   .card {
     background: white;
-    border-radius: 8px;
-    padding: 1.5vw;
+    border-radius: 0.12in;
+    padding: 0.4in;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    border-top: 4px solid #c9b613;
+    border-top: 6px solid #c9b613;
   }
   .card h2 {
-    font-size: clamp(14pt, 1.8vw, 36pt);
+    font-size: 36pt;
     color: #2c2c2c;
-    margin-bottom: 0.8vw;
-    padding-bottom: 0.4vw;
+    margin-bottom: 0.2in;
+    padding-bottom: 0.1in;
     border-bottom: 2px solid #e0ddd0;
   }
   .card p, .card li {
-    font-size: clamp(10pt, 1.2vw, 24pt);
+    font-size: 24pt;
     line-height: 1.45;
-    margin-bottom: 0.5vw;
+    margin-bottom: 0.12in;
   }
   .card ul {
-    padding-left: 1.5vw;
-    margin-bottom: 0.6vw;
+    padding-left: 0.35in;
+    margin-bottom: 0.15in;
   }
   .card li {
-    margin-bottom: 0.3vw;
+    margin-bottom: 0.08in;
   }
 
   .tool-name {
@@ -127,30 +137,30 @@
   .languages {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4vw;
-    margin: 0.5vw 0;
+    gap: 0.08in;
+    margin: 0.12in 0;
   }
   .lang-tag {
     background: #f5f3e0;
     color: #5a5210;
-    padding: 0.2vw 0.6vw;
-    border-radius: 4px;
-    font-size: clamp(8pt, 1vw, 20pt);
+    padding: 0.04in 0.12in;
+    border-radius: 0.06in;
+    font-size: 20pt;
     font-weight: 500;
   }
 
   .formats {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4vw;
-    margin: 0.5vw 0;
+    gap: 0.08in;
+    margin: 0.12in 0;
   }
   .fmt-tag {
     background: #e8e8e4;
     color: #4a4a4a;
-    padding: 0.2vw 0.6vw;
-    border-radius: 4px;
-    font-size: clamp(8pt, 1vw, 20pt);
+    padding: 0.04in 0.12in;
+    border-radius: 0.06in;
+    font-size: 20pt;
     font-weight: 500;
   }
 
@@ -159,7 +169,7 @@
     padding-left: 0;
   }
   .annotation-list li {
-    padding-left: 1.3vw;
+    padding-left: 0.3in;
     position: relative;
   }
   .annotation-list li::before {
@@ -173,79 +183,143 @@
   .workflow-box {
     background: #faf8ec;
     border: 2px solid #e0ddb0;
-    border-radius: 6px;
-    padding: 1vw;
-    margin: 0.6vw 0;
+    border-radius: 0.1in;
+    padding: 0.25in;
+    margin: 0.15in 0;
   }
   .workflow-box .step {
     display: flex;
     align-items: center;
-    gap: 0.6vw;
-    margin: 0.3vw 0;
-    font-size: clamp(9pt, 1.1vw, 22pt);
+    gap: 0.15in;
+    margin: 0.08in 0;
+    font-size: 22pt;
   }
   .workflow-box .arrow {
     color: #c9b613;
-    font-size: clamp(12pt, 1.4vw, 28pt);
+    font-size: 28pt;
     font-weight: 700;
   }
   .workflow-box .step-num {
     background: #4a4a4a;
     color: white;
-    width: 1.8vw;
-    height: 1.8vw;
-    min-width: 24px;
-    min-height: 24px;
+    width: 0.4in;
+    height: 0.4in;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: clamp(9pt, 1.1vw, 22pt);
+    font-size: 22pt;
     flex-shrink: 0;
   }
 
   .arch-diagram {
     background: #f5f4ee;
-    border-radius: 6px;
-    padding: 0.8vw;
-    margin: 0.6vw 0;
+    border-radius: 0.1in;
+    padding: 0.2in;
+    margin: 0.15in 0;
     text-align: center;
   }
   .arch-row {
     display: flex;
     justify-content: center;
-    gap: 0.6vw;
-    margin: 0.3vw 0;
+    gap: 0.15in;
+    margin: 0.08in 0;
   }
   .arch-box {
     background: white;
     border: 2px solid #4a4a4a;
-    border-radius: 4px;
-    padding: 0.3vw 0.8vw;
-    font-size: clamp(8pt, 1vw, 20pt);
+    border-radius: 0.08in;
+    padding: 0.1in 0.2in;
+    font-size: 20pt;
     font-weight: 500;
   }
   .arch-box.tool { background: #4a4a4a; color: white; }
   .arch-box.dm { background: #c9b613; color: #2c2c2c; }
   .arch-box.container { background: #6b6b6b; color: white; }
   .arch-arrow {
-    font-size: clamp(10pt, 1.2vw, 24pt);
+    font-size: 24pt;
     color: #999;
-    margin: 0.2vw 0;
+    margin: 0.04in 0;
+  }
+
+  /* NEW: Tool grid for comprehensive overview */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.15in;
+    margin: 0.15in 0;
+  }
+  .tool-card {
+    background: #faf8ec;
+    border: 2px solid #e0ddb0;
+    border-radius: 0.08in;
+    padding: 0.15in;
+  }
+  .tool-card h3 {
+    font-size: 20pt;
+    color: #4a4a4a;
+    font-weight: 700;
+    margin-bottom: 0.08in;
+  }
+  .tool-card p {
+    font-size: 18pt;
+    line-height: 1.3;
+    margin-bottom: 0.06in;
+  }
+  .tool-card .version {
+    font-size: 16pt;
+    color: #6b6b6b;
+    font-style: italic;
+  }
+
+  /* Workflow images styling */
+  .workflow-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.08in;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border: 1px solid #e0ddd0;
+  }
+
+  /* Enhanced styling for full-width workflow section */
+  .workflow-full-width {
+    background: linear-gradient(135deg, #faf9f5 0%, #f5f4ee 100%);
+    border: 2px solid #c9b613;
+    border-radius: 0.15in;
+    padding: 0.5in;
+  }
+
+  .workflow-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2in;
+  }
+
+  .workflow-text-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 0 0.2in;
+  }
+
+  .workflow-text-center p {
+    font-size: 26pt;
+    line-height: 1.5;
   }
 
   /* ── Footer ── */
   .footer {
     background: #2c2c2c;
     color: white;
-    padding: 1vw 2vw;
-    border-radius: 8px;
+    padding: 0.3in 0.5in;
+    border-radius: 0.12in;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: clamp(9pt, 1.1vw, 22pt);
-    border-top: 4px solid #c9b613;
+    font-size: 22pt;
+    border-top: 6px solid #c9b613;
   }
   .footer a {
     color: #c9b613;
@@ -254,37 +328,33 @@
   .footer .logos {
     display: flex;
     align-items: center;
-    gap: 1.5vw;
+    gap: 0.4in;
   }
   .footer .logos img {
-    height: 4vw;
-    min-height: 40px;
+    height: 1.5in;
     object-fit: contain;
   }
   .footer .logos img.uni-logo {
     background: white;
-    padding: 0.3vw 0.6vw;
-    border-radius: 6px;
+    padding: 0.1in 0.2in;
+    border-radius: 0.1in;
   }
 
-  /* ── Responsive: stack columns on narrow screens ── */
-  @media (max-width: 900px) {
-    .content {
-      grid-template-columns: 1fr;
+  /* ── Print optimization ── */
+  @media print {
+    @page {
+      size: A0;
+      margin: 0;
     }
-    .header {
-      grid-template-columns: 1fr;
-      text-align: center;
+    body {
+      width: 33.1in !important;
+      height: 46.8in !important;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
     }
-    .header .logo-left,
-    .header .logo-right {
-      justify-content: center;
-      align-items: center;
-    }
-    .footer {
-      flex-direction: column;
-      gap: 1vw;
-      text-align: center;
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
   }
 </style>
@@ -298,7 +368,7 @@
   </div>
   <div class="title-area">
     <h1>Natural Language Processing in Galaxy</h1>
-    <div class="subtitle">Integrating Stanford CoreNLP and spaCy for the Digital Humanities</div>
+    <div class="subtitle">A Comprehensive NLP Toolkit for the Digital Humanities</div>
     <div class="authors">Daniela Schneider &middot; Keith Suderman</div>
     <div class="emails">schneidd@informatik.uni-freiburg.de &middot; suderman@jhu.edu</div>
     <div class="affiliations">University of Freiburg &middot; Johns Hopkins University</div>
@@ -314,60 +384,68 @@
 <div class="content">
 
   <!-- COLUMN 1 -->
-  <div style="display: flex; flex-direction: column; gap: 1.2vw;">
+  <div style="display: flex; flex-direction: column; gap: 0.3in;">
     <div class="card">
       <h2>Motivation</h2>
       <p>Galaxy's domain-agnostic platform extends well beyond bioinformatics. The <span class="highlight-text">Digital Humanities and Social Sciences SIG</span> connects researchers who need computational tools for analyzing large text corpora but often lack programming expertise.</p>
-      <p>We integrated two leading NLP frameworks into Galaxy, enabling researchers to perform sophisticated text analysis <span class="highlight-text">without writing a single line of code</span>.</p>
+      <p>We integrated <span class="highlight-text">six comprehensive NLP tools</span> into Galaxy, enabling researchers to perform sophisticated text analysis <span class="highlight-text">without writing a single line of code</span>. All tools are now <span class="highlight-text">submitted to the Galaxy Tools IUC</span> for community integration.</p>
     </div>
 
     <div class="card">
-      <h2>Stanford CoreNLP</h2>
-      <p>Java-based NLP toolkit from Stanford University providing a unified annotation pipeline.</p>
-      <p><strong>Annotators:</strong></p>
-      <ul class="annotation-list">
-        <li>Tokenization &amp; sentence splitting</li>
-        <li>Part-of-speech tagging &amp; lemmatization</li>
-        <li>Named entity recognition (NER)</li>
-        <li>Dependency &amp; constituency parsing</li>
-        <li>Coreference resolution</li>
-        <li>Sentiment analysis</li>
-      </ul>
-      <p><strong>Languages:</strong></p>
-      <div class="languages">
-        <span class="lang-tag">English</span>
-        <span class="lang-tag">Chinese</span>
-        <span class="lang-tag">Arabic</span>
-        <span class="lang-tag">French</span>
-        <span class="lang-tag">German</span>
-        <span class="lang-tag">Spanish</span>
-        <span class="lang-tag">Italian</span>
-        <span class="lang-tag">Hungarian</span>
-      </div>
-    </div>
+      <h2>NLP Tool Suite</h2>
+      <p>Galaxy now includes a comprehensive ecosystem of NLP tools for multi-language text analysis:</p>
 
-    <div class="card">
-      <h2>spaCy</h2>
-      <p>Python-based NLP library designed for production use with fast, accurate processing.</p>
-      <p><strong>Annotators:</strong></p>
-      <ul class="annotation-list">
-        <li>Tokenization &amp; sentence segmentation</li>
-        <li>Part-of-speech tagging &amp; lemmatization</li>
-        <li>Named entity recognition (NER)</li>
-        <li>Dependency parsing</li>
-      </ul>
-      <p><strong>25+ languages</strong> with models in multiple sizes:</p>
-      <div class="languages">
-        <span class="lang-tag">sm &mdash; fast, compact</span>
-        <span class="lang-tag">md &mdash; balanced</span>
-        <span class="lang-tag">lg &mdash; accurate</span>
-        <span class="lang-tag">trf &mdash; transformer</span>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <h3>Stanford CoreNLP</h3>
+          <p>Java-based toolkit with coreference resolution and sentiment analysis. <strong>8 languages</strong> including English, Chinese, Arabic.</p>
+          <div class="version">v4.5.10+galaxy0</div>
+        </div>
+
+        <div class="tool-card">
+          <h3>spaCy</h3>
+          <p>Fast, production-ready Python NLP. <strong>25+ languages</strong> with sm/md/lg/trf model variants.</p>
+          <div class="version">v3.8.11+galaxy0</div>
+        </div>
+
+        <div class="tool-card">
+          <h3>Stanford Stanza</h3>
+          <p>Neural NLP pipeline supporting <strong>80+ languages</strong> with CPU-optimized models.</p>
+          <div class="version">v1.11.1+galaxy0</div>
+        </div>
+
+        <div class="tool-card">
+          <h3>Co-occurrence Analysis</h3>
+          <p>Extract word relationships from NLP JSON output using sentence, window, or dependency methods.</p>
+          <div class="version">v1.0.0+galaxy0</div>
+        </div>
+
+        <div class="tool-card">
+          <h3>Entity Geocoding</h3>
+          <p>Convert named entities to GeoJSON for interactive map visualization via OpenLayers.</p>
+          <div class="version">v1.0.0+galaxy0</div>
+        </div>
+
+        <div class="tool-card">
+          <h3>VADER Sentiment</h3>
+          <p>Social media optimized sentiment analysis with bundled lexicon, no dependencies.</p>
+          <div class="version">v3.3.2+galaxy0</div>
+        </div>
       </div>
+
+      <p><strong>Key Features:</strong></p>
+      <ul class="annotation-list">
+        <li>Tokenization, POS tagging, NER, parsing</li>
+        <li>Sentiment analysis and coreference resolution</li>
+        <li>Word relationship analysis</li>
+        <li>Geographic entity mapping</li>
+        <li>Interactive visualizations</li>
+      </ul>
     </div>
   </div>
 
   <!-- COLUMN 2 -->
-  <div style="display: flex; flex-direction: column; gap: 1.2vw;">
+  <div style="display: flex; flex-direction: column; gap: 0.3in;">
     <div class="card">
       <h2>Architecture</h2>
       <p>Each tool in Galaxy follows a consistent pattern designed for portability and ease of administration.</p>
@@ -398,59 +476,23 @@
 
     <div class="card">
       <h2>Output Formats</h2>
-      <p>Both tools support multiple standard NLP output formats for interoperability:</p>
+      <p>All tools support multiple standard NLP output formats for interoperability:</p>
       <div class="formats">
         <span class="fmt-tag">JSON</span>
         <span class="fmt-tag">CoNLL</span>
         <span class="fmt-tag">CoNLL-U</span>
         <span class="fmt-tag">Plain Text</span>
         <span class="fmt-tag">XML (CoreNLP)</span>
+        <span class="fmt-tag">GeoJSON (Geocoding)</span>
+        <span class="fmt-tag">TSV (Analysis)</span>
       </div>
-      <p>Structured outputs enable downstream processing with other Galaxy tools or external analysis pipelines.</p>
-    </div>
-
-    <div class="card">
-      <h2>For Administrators</h2>
-      <ul>
-        <li>Install tools from the <strong>Galaxy Toolshed</strong></li>
-        <li>Use data managers (<em>Admin &rarr; Local Data</em>) to install only the language models your researchers need</li>
-        <li>No manual configuration of model files or paths required</li>
-        <li>CoreNLP: select languages from 8 options</li>
-        <li>spaCy: choose from 70+ models across 25+ languages in multiple sizes</li>
-      </ul>
+      <p>Structured outputs enable downstream processing with other Galaxy tools or external analysis pipelines. Enhanced output includes proper Galaxy datatypes for seamless tool chaining.</p>
     </div>
 
   </div>
 
   <!-- COLUMN 3 -->
-  <div style="display: flex; flex-direction: column; gap: 1.2vw;">
-    <div class="card">
-      <h2>Example Workflow</h2>
-      <p><strong>NER &amp; Frequency Analysis of Presidential Inaugural Addresses</strong></p>
-      <div class="workflow-box">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div>Upload corpus of inaugural addresses (1789&ndash;2025)</div>
-        </div>
-        <div class="step"><div class="arrow">&darr;</div></div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div>Run spaCy NER to extract people, organizations, locations</div>
-        </div>
-        <div class="step"><div class="arrow">&darr;</div></div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div>Aggregate entities across decades</div>
-        </div>
-        <div class="step"><div class="arrow">&darr;</div></div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div>Visualize shifting political focus over 236 years</div>
-        </div>
-      </div>
-      <p>No programming required &mdash; the entire analysis from upload to visualisation on the map runs as a reproducible Galaxy workflow.</p>
-    </div>
-
+  <div style="display: flex; flex-direction: column; gap: 0.3in;">
     <div class="card">
       <h2>Use Cases</h2>
       <ul>
@@ -464,38 +506,93 @@
 
     <div class="card">
       <h2>Availability</h2>
-      <p>All tools and data managers are available on the <strong>Galaxy Toolshed</strong> under owner <strong>ksuderman</strong>:</p>
+      <p>All NLP tools and data managers have been <span class="highlight-text">submitted to the Galaxy Tools IUC</span> for community integration and will be available through the Galaxy Toolshed upon acceptance.</p>
+      <p>The comprehensive toolkit includes six NLP analysis tools (Stanford CoreNLP, spaCy, Stanza, co-occurrence analysis, entity geocoding, and VADER sentiment) plus three data managers for downloading language models.</p>
+    </div>
+
+    <div class="card">
+      <h2>For Administrators</h2>
       <ul>
-        <li><span class="tool-name">stanford_corenlp</span> &mdash; CoreNLP tool wrapper</li>
-        <li><span class="tool-name">spacy_nlp</span> &mdash; spaCy tool wrapper</li>
-        <li><span class="tool-name">data_manager_corenlp_models</span></li>
-        <li><span class="tool-name">data_manager_spacy_models</span></li>
+        <li>Install tools from the <strong>Galaxy Toolshed</strong></li>
+        <li>Use data managers (<em>Admin &rarr; Local Data</em>) to install only the language models your researchers need</li>
+        <li>No manual configuration of model files or paths required</li>
+        <li>CoreNLP: select languages from 8 options</li>
+        <li>spaCy: choose from 70+ models across 25+ languages</li>
+        <li>Stanza: 80+ languages with fast CPU-only models</li>
+        <li>Analysis tools: no model downloads required</li>
       </ul>
     </div>
 
   </div>
 
-  <!-- Bottom row -->
+  <!-- Workflow Section (3 columns - full width) -->
+  <div class="card workflow-full-width" style="grid-column: 1 / 4;">
+    <h2>Example Workflow: Named Entity Recognition of Nixon's Presidential Speeches</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.4in; align-items: start; margin-top: 0.25in;">
+
+      <!-- Left: Text sample and workflow diagram -->
+      <div class="workflow-column">
+        <div style="text-align: center;">
+          <img src="images/Nixon_text.png" alt="Nixon Speech Text Sample" class="workflow-image" style="max-height: 4in;">
+        </div>
+
+        <div style="text-align: center; margin-top: 0.25in;">
+          <img src="images/NER_WF.png" alt="Named Entity Recognition Workflow" class="workflow-image" style="max-height: 4.5in;">
+        </div>
+      </div>
+
+      <!-- Center: Analysis explanation -->
+      <div class="workflow-text-center">
+        <p>Applying Named Entity Recognition to Nixon's presidential speeches reveals clear alignment with Cold War rhetoric. As the American president, the <span class="highlight-text">United States of America</span> is naturally his most often referenced location.</p>
+
+        <p style="margin-top: 0.2in;">The other locations, <span class="highlight-text">Moscow and Beijing</span>, are used as pars pro toto to stand in for Russia and China, the US's most prominent geopolitical rivals during the Cold War.</p>
+
+        <p style="margin-top: 0.2in;"><strong>Impact:</strong> The workflow can quickly extract this information and provide geographic visualizations that guide further close reading and reveal patterns in political rhetoric.</p>
+      </div>
+
+      <!-- Right: Results table and map -->
+      <div class="workflow-column">
+        <div style="text-align: center;">
+          <img src="images/Nixon_table.png" alt="Nixon NER Results Table" class="workflow-image" style="max-height: 4.5in;">
+        </div>
+
+        <div style="text-align: center; margin-top: 0.25in;">
+          <img src="images/Nixon_Map.png" alt="Geographic Visualization of Nixon Speech Locations" class="workflow-image" style="max-height: 4in;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom row - reorganized for better space utilization -->
   <div class="card" style="grid-column: 1 / 3;">
     <h2>Why Not Just Use an LLM?</h2>
-    <ul>
-      <li><strong>Reproducibility</strong> &mdash; CoreNLP and spaCy produce identical results on every run. LLMs are non-deterministic: the same prompt can yield different entity tags or miss entities across runs. For citable, replicable research this matters.</li>
-      <li><strong>Structured output</strong> &mdash; Standard NLP formats (CoNLL-U, JSON with token offsets, dependency trees) are machine-parseable and consistent. LLM output is free text requiring additional parsing with no schema guarantees.</li>
-      <li><strong>Scale and cost</strong> &mdash; Processing a 120-chapter novel or a 500-document corpus costs nothing beyond compute time. LLM APIs charge per token and are rate-limited, making large-scale text analysis expensive.</li>
-     <li><strong>Platform synergies</strong> &mdash; Galaxy allows you to connect the NLP tools with more than 4000 tools of your choice, encompassing the whole research life cycle and not just one substep.</li>
-    </ul>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.25in;">
+      <div>
+        <ul>
+          <li><strong>Reproducibility</strong> &mdash; Traditional NLP tools produce identical results on every run. LLMs are non-deterministic: the same prompt can yield different entity tags or miss entities across runs. For citable, replicable research this matters.</li>
+          <li><strong>Structured output</strong> &mdash; Standard NLP formats (CoNLL-U, JSON with token offsets, dependency trees, GeoJSON) are machine-parseable and consistent. LLM output is free text requiring additional parsing with no schema guarantees.</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><strong>Scale and cost</strong> &mdash; Processing a 120-chapter novel or a 500-document corpus costs nothing beyond compute time. LLM APIs charge per token and are rate-limited, making large-scale text analysis expensive.</li>
+          <li><strong>Platform synergies</strong> &mdash; Galaxy allows you to connect the NLP tools with more than 4000 tools of your choice, encompassing the whole research life cycle and not just one substep.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="card" style="grid-column: 3 / 4;">
-    <h2>Future Directions</h2>
+    <h2>Impact &amp; Future</h2>
     <ul>
-      <li>Expand the NLP tool collection with additional frameworks and specialized annotators</li>
+      <li>Expand the analysis tool collection with network visualization and topic modeling</li>
       <li>Build reusable Galaxy workflows for common DH research patterns</li>
-      <li>Develop visualization tools for NER output, sentiment arcs, and entity networks</li>
       <li>Integrate with existing OCR tools for digitized manuscript pipelines</li>
       <li>Apply existing Automatic Speech Recognition to use NLP tools on audio files</li>
-      <li>Grow the <span class="highlight-text">Digital Humanities &amp; Social Sciences SIG:</span></li>
-      <li>https://galaxyproject.org/community/sig/digital-humanities/</li>    
+      <li>Grow the <span class="highlight-text">Digital Humanities &amp; Social Sciences SIG</span></li>
+      <li>https://galaxyproject.org/community/sig/digital-humanities/</li>
     </ul>
   </div>
 
