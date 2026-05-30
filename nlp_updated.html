@@ -411,7 +411,7 @@
   <div style="display: flex; flex-direction: column; gap: 0.3in;">
     <div class="card">
       <h2>Architecture</h2>
-      <p>Each tool follows a consistent pattern designed for portability and ease of administration.</p>
+      <p>Each tool in Galaxy follows a consistent pattern designed for portability and ease of administration.</p>
 
       <div class="arch-diagram">
         <div class="arch-row">
@@ -498,7 +498,7 @@
           <div>Assess sentiment by location with VADER</div>
         </div>
       </div>
-      <p>No programming required &mdash; the entire analysis pipeline runs as a reproducible Galaxy workflow with seamless tool integration.</p>
+      <p>No programming required &mdash; the entire analysis from upload to visualisation on the map runs as a reproducible Galaxy workflow.</p>
     </div>
 
     <div class="card">
@@ -543,17 +543,19 @@
       <li><strong>Reproducibility</strong> &mdash; Traditional NLP tools produce identical results on every run. LLMs are non-deterministic: the same prompt can yield different entity tags or miss entities across runs. For citable, replicable research this matters.</li>
       <li><strong>Structured output</strong> &mdash; Standard NLP formats (CoNLL-U, JSON with token offsets, dependency trees, GeoJSON) are machine-parseable and consistent. LLM output is free text requiring additional parsing with no schema guarantees.</li>
       <li><strong>Scale and cost</strong> &mdash; Processing a 120-chapter novel or a 500-document corpus costs nothing beyond compute time. LLM APIs charge per token and are rate-limited, making large-scale text analysis expensive.</li>
+      <li><strong>Platform synergies</strong> &mdash; Galaxy allows you to connect the NLP tools with more than 4000 tools of your choice, encompassing the whole research life cycle and not just one substep.</li>
     </ul>
   </div>
 
   <div class="card" style="grid-column: 3 / 4;">
     <h2>Impact &amp; Future</h2>
     <ul>
-      <li><strong>Community Integration</strong> &mdash; tools submitted for inclusion in Galaxy's community toolshed</li>
-      <li><strong>Workflow Development</strong> &mdash; building reusable patterns for common DH research</li>
-      <li>Enhanced visualization tools for sentiment arcs and entity networks</li>
-      <li>Integration with OCR tools for digitized manuscript pipelines</li>
+      <li>Expand the analysis tool collection with network visualization and topic modeling</li>
+      <li>Build reusable Galaxy workflows for common DH research patterns</li>
+      <li>Integrate with existing OCR tools for digitized manuscript pipelines</li>
+      <li>Apply existing Automatic Speech Recognition to use NLP tools on audio files</li>
       <li>Grow the <span class="highlight-text">Digital Humanities &amp; Social Sciences SIG</span></li>
+      <li>https://galaxyproject.org/community/sig/digital-humanities/</li>    
     </ul>
   </div>
 
